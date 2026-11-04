@@ -1,5 +1,5 @@
 pkgname=crownos-appstore
-pkgver=0.1.0
+pkgver=0.1.1
 pkgrel=1
 pkgdesc="App Store for CrownOS: apps from the repos, the AUR, Flathub and the Snap Store"
 arch=(x86_64)

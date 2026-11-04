@@ -1,6 +1,6 @@
 pkgbase = crownos-appstore
 	pkgdesc = App Store for CrownOS: apps from the repos, the AUR, Flathub and the Snap Store
-	pkgver = 0.1.0
+	pkgver = 0.1.1
 	pkgrel = 1
 	url = https://github.com/Crown-OS/crownos-appstore
 	arch = x86_64
@@ -21,7 +21,7 @@ pkgbase = crownos-appstore
 	optdepends = snapd: apps from the Snap Store
 	optdepends = paru: apps from the AUR
 	optdepends = yay: apps from the AUR
-	source = crownos-appstore::git+https://github.com/Crown-OS/crownos-appstore.git#tag=v0.1.0
+	source = crownos-appstore::git+https://github.com/Crown-OS/crownos-appstore.git#tag=v0.1.1
 	source = crownos-config::git+https://github.com/Crown-OS/crownos-config.git#commit=bf11495c4742fdc0ff4296fc96de6ecd83511813
 	source = crownos-ipc::git+https://github.com/Crown-OS/crownos-ipc.git#commit=ee919989cacbeaac3d48e3b705ee38b8e54f7e44
 	source = crownos-protocols::git+https://github.com/Crown-OS/crownos-protocols.git#commit=68990982efbc09229d65d59826452ee3cc46107f

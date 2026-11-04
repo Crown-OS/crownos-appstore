@@ -1,9 +1,9 @@
 use crownui::{
     kit::{
         INTER_FAMILY, TextInputOptions, sidebar_search, sidebar_with_header, slide_transition,
-        toast_host, use_theme,
+        title_bar_spacer, toast_host, use_theme, window_controls,
     },
-    prelude::{Curve, Cx, Styled, View, spacer, vstack, zstack},
+    prelude::{Curve, Cx, Styled, View, hstack, vstack, zstack},
 };
 
 use crate::{
@@ -30,6 +30,11 @@ pub fn shell(cx: &mut Cx, store: Store) -> impl View + use<> {
     })
     .flex_1();
     let search = sidebar_search(store.query).placeholder("Search apps");
-    let window = sidebar_with_header(sidebar_menus(store), (spacer(), search, spacer()), content);
+    let controls = hstack((title_bar_spacer(), window_controls())).flex_1();
+    let window = sidebar_with_header(
+        sidebar_menus(store),
+        (title_bar_spacer(), search, controls),
+        content,
+    );
     zstack((backdrop, toast_host(window).w_full().h_full())).font_family(INTER_FAMILY)
 }

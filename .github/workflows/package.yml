@@ -36,7 +36,7 @@ jobs:
         run: |
           useradd --create-home builder
           chown -R builder packaging/snapd
-          cd packaging/snapd && runuser -u builder -- makepkg --nodeps --noconfirm
+          cd packaging/snapd && runuser -u builder -- env GOFLAGS=-buildvcs=false makepkg --nodeps --noconfirm
       - name: Publish
         env:
           GH_TOKEN: ${{ github.token }}

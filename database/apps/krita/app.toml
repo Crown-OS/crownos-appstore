@@ -1,0 +1,22 @@
+id = "krita"
+name = "Krita"
+summary = "Digital painting, creative freedom"
+description = "Krita is a professional painting program made by artists, with brush engines, layers, animation tools and more."
+category = "graphics"
+theme_color = "#3babff"
+icon = "icon.png"
+homepage = "https://krita.org"
+license = "GPL-3.0-or-later"
+keywords = ["paint", "drawing", "art"]
+
+[[sources]]
+kind = "pacman"
+package = "krita"
+
+[[sources]]
+kind = "flatpak"
+package = "org.kde.krita"
+
+[[sources]]
+kind = "snap"
+package = "krita"

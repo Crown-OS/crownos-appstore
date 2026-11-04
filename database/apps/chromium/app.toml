@@ -1,0 +1,22 @@
+id = "chromium"
+name = "Chromium"
+summary = "The open-source web browser behind Chrome"
+description = "Chromium is the open-source browser project that Google Chrome is built on, focused on speed, stability and security."
+category = "internet"
+theme_color = "#4285f4"
+icon = "icon.png"
+homepage = "https://www.chromium.org"
+license = "BSD-3-Clause"
+keywords = ["browser", "web", "google"]
+
+[[sources]]
+kind = "pacman"
+package = "chromium"
+
+[[sources]]
+kind = "flatpak"
+package = "org.chromium.Chromium"
+
+[[sources]]
+kind = "snap"
+package = "chromium"

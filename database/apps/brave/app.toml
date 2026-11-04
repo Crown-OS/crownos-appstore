@@ -1,0 +1,22 @@
+id = "brave"
+name = "Brave"
+summary = "Privacy-first web browser with a built-in ad blocker"
+description = "Brave blocks ads and trackers by default, loads pages faster and is built on Chromium, so your extensions keep working."
+category = "internet"
+theme_color = "#fb542b"
+icon = "icon.png"
+homepage = "https://brave.com"
+license = "MPL-2.0"
+keywords = ["browser", "web", "adblock", "privacy"]
+
+[[sources]]
+kind = "aur"
+package = "brave-bin"
+
+[[sources]]
+kind = "flatpak"
+package = "com.brave.Browser"
+
+[[sources]]
+kind = "snap"
+package = "brave"

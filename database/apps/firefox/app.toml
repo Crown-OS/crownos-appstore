@@ -1,0 +1,22 @@
+id = "firefox"
+name = "Firefox"
+summary = "Fast, private and free web browser"
+description = "Firefox is a free and open-source web browser from Mozilla with built-in tracking protection, sync across devices and a rich extension ecosystem."
+category = "internet"
+theme_color = "#ff7139"
+icon = "icon.png"
+homepage = "https://www.mozilla.org/firefox"
+license = "MPL-2.0"
+keywords = ["browser", "web", "mozilla"]
+
+[[sources]]
+kind = "pacman"
+package = "firefox"
+
+[[sources]]
+kind = "flatpak"
+package = "org.mozilla.firefox"
+
+[[sources]]
+kind = "snap"
+package = "firefox"

@@ -1,0 +1,26 @@
+name: Verify database sources
+
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: verify
+        run: |
+          if ! python3 database/scripts/verify-sources.py > report.txt; then
+            echo "missing=true" >> "$GITHUB_OUTPUT"
+          fi
+          cat report.txt
+      - if: steps.verify.outputs.missing == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Packages missing upstream ($(date -I))" --body-file report.txt --label broken-source

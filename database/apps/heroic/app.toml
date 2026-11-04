@@ -1,0 +1,18 @@
+id = "heroic"
+name = "Heroic Games Launcher"
+summary = "Play games from Epic, GOG and Amazon"
+description = "Heroic is an open-source launcher for Epic Games, GOG and Amazon Prime Gaming libraries."
+category = "games"
+theme_color = "#6d28d9"
+icon = "icon.png"
+homepage = "https://heroicgameslauncher.com"
+license = "GPL-3.0-only"
+keywords = ["game", "launcher", "epic", "gog"]
+
+[[sources]]
+kind = "aur"
+package = "heroic-games-launcher-bin"
+
+[[sources]]
+kind = "flatpak"
+package = "com.heroicgameslauncher.hgl"

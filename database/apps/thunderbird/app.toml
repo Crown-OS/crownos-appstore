@@ -1,0 +1,22 @@
+id = "thunderbird"
+name = "Thunderbird"
+summary = "Email, calendar and contacts in one place"
+description = "Thunderbird is a free email client from Mozilla with a unified inbox, calendar, address book, chat and OpenPGP encryption."
+category = "communication"
+theme_color = "#0a84ff"
+icon = "icon.png"
+homepage = "https://www.thunderbird.net"
+license = "MPL-2.0"
+keywords = ["email", "mail", "calendar"]
+
+[[sources]]
+kind = "pacman"
+package = "thunderbird"
+
+[[sources]]
+kind = "flatpak"
+package = "org.mozilla.Thunderbird"
+
+[[sources]]
+kind = "snap"
+package = "thunderbird"

@@ -1,0 +1,76 @@
+[workspace]
+members = ["crates/apps-database"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+rust-version = "1.97"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "2"
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[workspace.lints.clippy]
+unwrap_used = "warn"
+expect_used = "warn"
+dbg_macro = "warn"
+todo = "warn"
+
+[package]
+name = "crownos-appstore"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+description = "The CrownOS App Store"
+
+[[bin]]
+name = "crownos-appstore"
+path = "src/main.rs"
+
+[[bin]]
+name = "crownos-appstore-helper"
+path = "src/bin/crownos-appstore-helper.rs"
+
+[dependencies]
+anyhow.workspace = true
+thiserror.workspace = true
+crownconfig = { path = "../crownui/crownconfig" }
+crownos-apps-database = { path = "crates/apps-database" }
+crownui = { path = "../crownui/crownui", default-features = false, features = [
+  "wayland",
+  "impeller",
+  "static",
+  "tokio",
+  "accessibility",
+  "mcp",
+] }
+image.workspace = true
+rustix = { version = "1", features = ["process"] }
+tokio = { version = "1", default-features = false, features = [
+  "io-util",
+  "macros",
+  "process",
+  "rt",
+  "sync",
+  "time",
+] }
+ureq = "3"
+
+[dev-dependencies]
+crowntest = { path = "../crownui/crowntest" }
+insta = "1"
+
+[lints]
+workspace = true
+
+[profile.dev]
+split-debuginfo = "unpacked"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true

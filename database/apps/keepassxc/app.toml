@@ -1,0 +1,22 @@
+id = "keepassxc"
+name = "KeePassXC"
+summary = "Offline, cross-platform password manager"
+description = "KeePassXC keeps your passwords in an encrypted local database with browser integration and TOTP support."
+category = "utilities"
+theme_color = "#6cac4d"
+icon = "icon.png"
+homepage = "https://keepassxc.org"
+license = "GPL-3.0-or-later"
+keywords = ["password", "security", "keepass"]
+
+[[sources]]
+kind = "pacman"
+package = "keepassxc"
+
+[[sources]]
+kind = "flatpak"
+package = "org.keepassxc.KeePassXC"
+
+[[sources]]
+kind = "snap"
+package = "keepassxc"

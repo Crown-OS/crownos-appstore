@@ -1,0 +1,22 @@
+id = "retroarch"
+name = "RetroArch"
+summary = "Frontend for emulators, game engines and media players"
+description = "RetroArch runs classic games through libretro cores, with shaders, netplay, rewinding and achievements."
+category = "games"
+theme_color = "#7b2cbf"
+icon = "icon.png"
+homepage = "https://www.retroarch.com"
+license = "GPL-3.0-or-later"
+keywords = ["emulator", "retro", "game"]
+
+[[sources]]
+kind = "pacman"
+package = "retroarch"
+
+[[sources]]
+kind = "flatpak"
+package = "org.libretro.RetroArch"
+
+[[sources]]
+kind = "snap"
+package = "retroarch"

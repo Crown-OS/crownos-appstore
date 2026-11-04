@@ -1,0 +1,22 @@
+[package]
+name = "crownos-apps-database"
+version = "0.1.0"
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+postcard = { version = "1", default-features = false, features = ["use-std"] }
+zstd = { version = "0.13", default-features = false }
+thiserror.workspace = true
+
+[dev-dependencies]
+anyhow.workspace = true
+toml = "0.9"
+resvg = { version = "0.48", default-features = false }
+image.workspace = true
+
+[lints]
+workspace = true

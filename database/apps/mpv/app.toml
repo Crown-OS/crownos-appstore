@@ -1,0 +1,18 @@
+id = "mpv"
+name = "mpv"
+summary = "Minimalist, scriptable media player"
+description = "mpv is a free, open-source media player with high-quality video output, hardware decoding and a powerful scripting interface."
+category = "multimedia"
+theme_color = "#691f69"
+icon = "icon.png"
+homepage = "https://mpv.io"
+license = "GPL-2.0-or-later"
+keywords = ["video", "player", "media"]
+
+[[sources]]
+kind = "pacman"
+package = "mpv"
+
+[[sources]]
+kind = "flatpak"
+package = "io.mpv.Mpv"

@@ -1,0 +1,22 @@
+id = "steam"
+name = "Steam"
+summary = "The ultimate destination for playing games"
+description = "Steam is Valve's game store and launcher, with Proton to play Windows games on Linux."
+category = "games"
+theme_color = "#1b2838"
+icon = "icon.png"
+homepage = "https://store.steampowered.com"
+license = "LicenseRef-proprietary"
+keywords = ["game", "store", "proton", "valve"]
+
+[[sources]]
+kind = "pacman"
+package = "steam"
+
+[[sources]]
+kind = "flatpak"
+package = "com.valvesoftware.Steam"
+
+[[sources]]
+kind = "snap"
+package = "steam"

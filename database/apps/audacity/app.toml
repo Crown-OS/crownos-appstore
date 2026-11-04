@@ -1,0 +1,22 @@
+id = "audacity"
+name = "Audacity"
+summary = "Record and edit audio"
+description = "Audacity is an easy-to-use, multi-track audio editor and recorder with effects, analysis tools and plugin support."
+category = "multimedia"
+theme_color = "#0000cc"
+icon = "icon.png"
+homepage = "https://www.audacityteam.org"
+license = "GPL-3.0-or-later"
+keywords = ["audio", "recording", "editor", "sound"]
+
+[[sources]]
+kind = "pacman"
+package = "audacity"
+
+[[sources]]
+kind = "flatpak"
+package = "org.audacityteam.Audacity"
+
+[[sources]]
+kind = "snap"
+package = "audacity"

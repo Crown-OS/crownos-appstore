@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=App Store
+GenericName=Software
+Comment=Find, install and update apps
+Exec=crownos-appstore
+Icon=system-software-install
+Terminal=false
+Categories=System;PackageManager;
+Keywords=software;apps;install;store;flatpak;snap;aur;
+StartupWMClass=crownappstore

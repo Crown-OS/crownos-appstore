@@ -1,0 +1,23 @@
+id = "visual-studio-code"
+name = "Visual Studio Code"
+summary = "Code editing, redefined"
+description = "Visual Studio Code is a lightweight but powerful source code editor with debugging, Git integration, IntelliSense and thousands of extensions."
+category = "development"
+theme_color = "#007acc"
+icon = "icon.png"
+homepage = "https://code.visualstudio.com"
+license = "LicenseRef-proprietary"
+keywords = ["editor", "ide", "code", "vscode"]
+
+[[sources]]
+kind = "aur"
+package = "visual-studio-code-bin"
+
+[[sources]]
+kind = "flatpak"
+package = "com.visualstudio.code"
+
+[[sources]]
+kind = "snap"
+package = "code"
+classic = true

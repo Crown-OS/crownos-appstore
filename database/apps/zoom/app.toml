@@ -1,0 +1,22 @@
+id = "zoom"
+name = "Zoom"
+summary = "Video meetings and webinars"
+description = "Zoom Workplace brings video meetings, chat and webinars to the desktop."
+category = "communication"
+theme_color = "#0b5cff"
+icon = "icon.png"
+homepage = "https://zoom.us"
+license = "LicenseRef-proprietary"
+keywords = ["video", "meeting", "conference"]
+
+[[sources]]
+kind = "aur"
+package = "zoom"
+
+[[sources]]
+kind = "flatpak"
+package = "us.zoom.Zoom"
+
+[[sources]]
+kind = "snap"
+package = "zoom-client"

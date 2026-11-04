@@ -1,0 +1,22 @@
+id = "discord"
+name = "Discord"
+summary = "Voice, video and text chat for communities"
+description = "Discord is where communities and friends hang out, with voice channels, video calls, screen sharing and text chat."
+category = "communication"
+theme_color = "#5865f2"
+icon = "icon.png"
+homepage = "https://discord.com"
+license = "LicenseRef-proprietary"
+keywords = ["chat", "voice", "gaming"]
+
+[[sources]]
+kind = "pacman"
+package = "discord"
+
+[[sources]]
+kind = "flatpak"
+package = "com.discordapp.Discord"
+
+[[sources]]
+kind = "snap"
+package = "discord"

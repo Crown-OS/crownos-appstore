@@ -1,0 +1,18 @@
+id = "flatseal"
+name = "Flatseal"
+summary = "Manage Flatpak permissions"
+description = "Flatseal is a graphical utility to review and modify permissions of your Flatpak applications."
+category = "system"
+theme_color = "#4a90d9"
+icon = "icon.png"
+homepage = "https://github.com/tchx84/Flatseal"
+license = "GPL-3.0-or-later"
+keywords = ["flatpak", "permissions", "sandbox"]
+
+[[sources]]
+kind = "pacman"
+package = "flatseal"
+
+[[sources]]
+kind = "flatpak"
+package = "com.github.tchx84.Flatseal"

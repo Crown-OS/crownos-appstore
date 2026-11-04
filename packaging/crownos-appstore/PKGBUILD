@@ -1,0 +1,41 @@
+pkgname=crownos-appstore
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="App Store for CrownOS: apps from the repos, the AUR, Flathub and the Snap Store"
+arch=(x86_64)
+url="https://github.com/Crown-OS/crownos-appstore"
+license=(MIT)
+depends=(gcc-libs glibc libglvnd libxkbcommon fontconfig vulkan-icd-loader wayland polkit pacman-contrib flatpak xdg-utils)
+optdepends=('snapd: apps from the Snap Store'
+            'paru: apps from the AUR'
+            'yay: apps from the AUR')
+makedepends=(cargo git)
+source=("$pkgname::git+$url.git#tag=v$pkgver"
+        "crownos-config::git+https://github.com/Crown-OS/crownos-config.git#commit=bf11495c4742fdc0ff4296fc96de6ecd83511813"
+        "crownos-ipc::git+https://github.com/Crown-OS/crownos-ipc.git#commit=ee919989cacbeaac3d48e3b705ee38b8e54f7e44"
+        "crownos-protocols::git+https://github.com/Crown-OS/crownos-protocols.git#commit=68990982efbc09229d65d59826452ee3cc46107f"
+        "crownos-voice::git+https://github.com/Crown-OS/crownos-voice.git#commit=fe6368a6f26bef66972f39ff6bc537a0f2aac1c3"
+        "crownui::git+https://github.com/Crown-OS/crownui.git#commit=224f765a8da2bddef97bdf6faf2f352399e240f8"
+        "vendor::git+https://github.com/Crown-OS/vendor.git#commit=f31b6bf70249d13f81891bb0e8ef9507fcd073dc")
+sha256sums=('SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+prepare() {
+  cd "$pkgname"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname"
+  export RUSTUP_TOOLCHAIN=stable CARGO_TARGET_DIR=target
+  cargo build --frozen --release
+}
+
+package() {
+  cd "$pkgname"
+  install -Dm755 target/release/crownos-appstore -t "$pkgdir/usr/bin"
+  install -Dm755 target/release/crownos-appstore-helper -t "$pkgdir/usr/bin"
+  install -Dm644 data/org.crownos.appstore.policy -t "$pkgdir/usr/share/polkit-1/actions"
+  install -Dm644 data/crownappstore.desktop -t "$pkgdir/usr/share/applications"
+  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+}

@@ -1,0 +1,22 @@
+id = "kdenlive"
+name = "Kdenlive"
+summary = "Free and open-source video editor"
+description = "Kdenlive is a non-linear video editor with multi-track editing, effects, transitions and proxy editing."
+category = "multimedia"
+theme_color = "#527eb2"
+icon = "icon.png"
+homepage = "https://kdenlive.org"
+license = "GPL-3.0-or-later"
+keywords = ["video", "editor", "film"]
+
+[[sources]]
+kind = "pacman"
+package = "kdenlive"
+
+[[sources]]
+kind = "flatpak"
+package = "org.kde.kdenlive"
+
+[[sources]]
+kind = "snap"
+package = "kdenlive"

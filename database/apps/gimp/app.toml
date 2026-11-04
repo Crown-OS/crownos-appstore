@@ -1,0 +1,22 @@
+id = "gimp"
+name = "GIMP"
+summary = "GNU Image Manipulation Program"
+description = "GIMP is a cross-platform image editor for photo retouching, image composition and image authoring."
+category = "graphics"
+theme_color = "#5c5543"
+icon = "icon.png"
+homepage = "https://www.gimp.org"
+license = "GPL-3.0-or-later"
+keywords = ["image", "photo", "editor", "paint"]
+
+[[sources]]
+kind = "pacman"
+package = "gimp"
+
+[[sources]]
+kind = "flatpak"
+package = "org.gimp.GIMP"
+
+[[sources]]
+kind = "snap"
+package = "gimp"

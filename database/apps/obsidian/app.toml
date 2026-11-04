@@ -1,0 +1,23 @@
+id = "obsidian"
+name = "Obsidian"
+summary = "A private and flexible note-taking app"
+description = "Obsidian stores your notes as plain Markdown files on your computer and links them into a knowledge graph."
+category = "office"
+theme_color = "#7c3aed"
+icon = "icon.png"
+homepage = "https://obsidian.md"
+license = "LicenseRef-proprietary"
+keywords = ["notes", "markdown", "knowledge"]
+
+[[sources]]
+kind = "pacman"
+package = "obsidian"
+
+[[sources]]
+kind = "flatpak"
+package = "md.obsidian.Obsidian"
+
+[[sources]]
+kind = "snap"
+package = "obsidian"
+classic = true

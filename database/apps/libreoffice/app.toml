@@ -1,0 +1,22 @@
+id = "libreoffice"
+name = "LibreOffice"
+summary = "The free and powerful office suite"
+description = "LibreOffice includes Writer, Calc, Impress, Draw, Base and Math and is compatible with Microsoft Office documents."
+category = "office"
+theme_color = "#18a303"
+icon = "icon.png"
+homepage = "https://www.libreoffice.org"
+license = "MPL-2.0"
+keywords = ["office", "document", "spreadsheet", "presentation", "word"]
+
+[[sources]]
+kind = "pacman"
+package = "libreoffice-fresh"
+
+[[sources]]
+kind = "flatpak"
+package = "org.libreoffice.LibreOffice"
+
+[[sources]]
+kind = "snap"
+package = "libreoffice"

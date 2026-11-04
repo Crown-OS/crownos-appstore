@@ -1,0 +1,22 @@
+id = "telegram"
+name = "Telegram"
+summary = "Fast and secure messaging"
+description = "Telegram Desktop is the official client for the Telegram messaging service, with cloud sync, large groups, channels and file sharing."
+category = "communication"
+theme_color = "#2aabee"
+icon = "icon.png"
+homepage = "https://desktop.telegram.org"
+license = "GPL-3.0-only"
+keywords = ["chat", "messenger", "im"]
+
+[[sources]]
+kind = "pacman"
+package = "telegram-desktop"
+
+[[sources]]
+kind = "flatpak"
+package = "org.telegram.desktop"
+
+[[sources]]
+kind = "snap"
+package = "telegram-desktop"

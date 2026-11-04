@@ -1,0 +1,22 @@
+id = "element"
+name = "Element"
+summary = "Secure collaboration on the Matrix network"
+description = "Element is a decentralised, end-to-end encrypted chat and collaboration app built on the open Matrix protocol."
+category = "communication"
+theme_color = "#0dbd8b"
+icon = "icon.png"
+homepage = "https://element.io"
+license = "AGPL-3.0-only"
+keywords = ["chat", "matrix", "messenger"]
+
+[[sources]]
+kind = "pacman"
+package = "element-desktop"
+
+[[sources]]
+kind = "flatpak"
+package = "im.riot.Riot"
+
+[[sources]]
+kind = "snap"
+package = "element-desktop"

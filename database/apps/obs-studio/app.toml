@@ -1,0 +1,18 @@
+id = "obs-studio"
+name = "OBS Studio"
+summary = "Live streaming and screen recording"
+description = "OBS Studio is free and open-source software for video recording and live streaming, with scenes, sources and real-time mixing."
+category = "multimedia"
+theme_color = "#302e31"
+icon = "icon.png"
+homepage = "https://obsproject.com"
+license = "GPL-2.0-or-later"
+keywords = ["stream", "record", "screencast", "video"]
+
+[[sources]]
+kind = "pacman"
+package = "obs-studio"
+
+[[sources]]
+kind = "flatpak"
+package = "com.obsproject.Studio"

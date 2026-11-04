@@ -1,0 +1,18 @@
+id = "stellarium"
+name = "Stellarium"
+summary = "A planetarium on your computer"
+description = "Stellarium shows a realistic sky in 3D, just like what you see with the naked eye, binoculars or a telescope."
+category = "education"
+theme_color = "#1f3b73"
+icon = "icon.png"
+homepage = "https://stellarium.org"
+license = "GPL-2.0-or-later"
+keywords = ["astronomy", "stars", "planetarium"]
+
+[[sources]]
+kind = "pacman"
+package = "stellarium"
+
+[[sources]]
+kind = "flatpak"
+package = "org.stellarium.Stellarium"

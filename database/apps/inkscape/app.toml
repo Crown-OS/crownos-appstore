@@ -1,0 +1,22 @@
+id = "inkscape"
+name = "Inkscape"
+summary = "Professional vector graphics editor"
+description = "Inkscape is a vector graphics editor for illustrations, icons, logos, diagrams and maps, using SVG as its native format."
+category = "graphics"
+theme_color = "#2b2b2b"
+icon = "icon.png"
+homepage = "https://inkscape.org"
+license = "GPL-3.0-or-later"
+keywords = ["vector", "svg", "drawing", "illustration"]
+
+[[sources]]
+kind = "pacman"
+package = "inkscape"
+
+[[sources]]
+kind = "flatpak"
+package = "org.inkscape.Inkscape"
+
+[[sources]]
+kind = "snap"
+package = "inkscape"

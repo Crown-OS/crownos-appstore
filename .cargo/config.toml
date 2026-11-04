@@ -1,0 +1,2 @@
+[alias]
+build-index = "run --release --package crownos-apps-database --example build-index --"

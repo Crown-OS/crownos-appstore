@@ -1,0 +1,22 @@
+id = "vlc"
+name = "VLC"
+summary = "Plays almost any audio and video file"
+description = "VLC is a free and open-source multimedia player that plays most media files, discs, devices and network streams."
+category = "multimedia"
+theme_color = "#ff8800"
+icon = "icon.png"
+homepage = "https://www.videolan.org/vlc"
+license = "GPL-2.0-or-later"
+keywords = ["video", "player", "music", "media"]
+
+[[sources]]
+kind = "pacman"
+package = "vlc"
+
+[[sources]]
+kind = "flatpak"
+package = "org.videolan.VLC"
+
+[[sources]]
+kind = "snap"
+package = "vlc"

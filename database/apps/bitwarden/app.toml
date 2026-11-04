@@ -1,0 +1,22 @@
+id = "bitwarden"
+name = "Bitwarden"
+summary = "Open-source password manager"
+description = "Bitwarden stores your passwords, passkeys and notes in an end-to-end encrypted vault that syncs everywhere."
+category = "utilities"
+theme_color = "#175ddc"
+icon = "icon.png"
+homepage = "https://bitwarden.com"
+license = "GPL-3.0-only"
+keywords = ["password", "security", "vault"]
+
+[[sources]]
+kind = "pacman"
+package = "bitwarden"
+
+[[sources]]
+kind = "flatpak"
+package = "com.bitwarden.desktop"
+
+[[sources]]
+kind = "snap"
+package = "bitwarden"

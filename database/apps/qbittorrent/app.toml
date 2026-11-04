@@ -1,0 +1,18 @@
+id = "qbittorrent"
+name = "qBittorrent"
+summary = "Free and open-source BitTorrent client"
+description = "qBittorrent is a lightweight BitTorrent client with a built-in search engine, RSS downloader and web UI."
+category = "internet"
+theme_color = "#2f67ba"
+icon = "icon.png"
+homepage = "https://www.qbittorrent.org"
+license = "GPL-2.0-or-later"
+keywords = ["torrent", "download", "p2p"]
+
+[[sources]]
+kind = "pacman"
+package = "qbittorrent"
+
+[[sources]]
+kind = "flatpak"
+package = "org.qbittorrent.qBittorrent"

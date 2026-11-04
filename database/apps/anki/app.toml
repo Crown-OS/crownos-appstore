@@ -1,0 +1,18 @@
+id = "anki"
+name = "Anki"
+summary = "Powerful, intelligent flash cards"
+description = "Anki makes remembering things easy with spaced repetition flashcards you can sync across devices."
+category = "education"
+theme_color = "#2b6cb0"
+icon = "icon.png"
+homepage = "https://apps.ankiweb.net"
+license = "AGPL-3.0-or-later"
+keywords = ["flashcards", "study", "learning"]
+
+[[sources]]
+kind = "pacman"
+package = "anki"
+
+[[sources]]
+kind = "flatpak"
+package = "net.ankiweb.Anki"

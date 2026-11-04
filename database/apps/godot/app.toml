@@ -1,0 +1,18 @@
+id = "godot"
+name = "Godot Engine"
+summary = "Free and open-source 2D and 3D game engine"
+description = "Godot provides a huge set of common tools so you can focus on making your game without reinventing the wheel."
+category = "development"
+theme_color = "#478cbf"
+icon = "icon.png"
+homepage = "https://godotengine.org"
+license = "MIT"
+keywords = ["game", "engine", "gamedev"]
+
+[[sources]]
+kind = "pacman"
+package = "godot"
+
+[[sources]]
+kind = "flatpak"
+package = "org.godotengine.Godot"

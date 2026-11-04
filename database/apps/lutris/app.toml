@@ -1,0 +1,18 @@
+id = "lutris"
+name = "Lutris"
+summary = "Open gaming platform for Linux"
+description = "Lutris installs and runs games from every era and store, with Wine runners, emulators and community install scripts."
+category = "games"
+theme_color = "#ff9900"
+icon = "icon.png"
+homepage = "https://lutris.net"
+license = "GPL-3.0-or-later"
+keywords = ["game", "launcher", "wine", "emulator"]
+
+[[sources]]
+kind = "pacman"
+package = "lutris"
+
+[[sources]]
+kind = "flatpak"
+package = "net.lutris.Lutris"

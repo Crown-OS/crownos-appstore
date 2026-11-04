@@ -1,0 +1,43 @@
+# Builds the Arch packages on a v* tag and publishes them on the release, where
+# Crown-OS/crownos-iso picks them up: crownos-appstore through the shared
+# workflow in Crown-OS/.github, and snapd (only in the AUR) from packaging/snapd.
+name: Package
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    uses: Crown-OS/.github/.github/workflows/arch-package.yml@main
+    with:
+      depends: wayland libxkbcommon vulkan-icd-loader polkit pacman-contrib xdg-utils
+    secrets: inherit
+
+  snapd:
+    needs: package
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - run: pacman -Syu --noconfirm --needed base-devel git github-cli
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        working-directory: packaging/snapd
+        run: |
+          source PKGBUILD
+          pacman -S --noconfirm --needed "${depends[@]}" "${makedepends[@]}"
+      - name: Build
+        run: |
+          useradd --create-home builder
+          chown -R builder packaging/snapd
+          cd packaging/snapd && runuser -u builder -- makepkg --nodeps --noconfirm
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "$GITHUB_REF_NAME" packaging/snapd/*.pkg.tar.zst --repo "$GITHUB_REPOSITORY" --clobber

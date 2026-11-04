@@ -1,0 +1,22 @@
+id = "signal"
+name = "Signal"
+summary = "Private messenger with end-to-end encryption"
+description = "Signal is a private messenger with end-to-end encrypted messages, voice and video calls that links to your phone."
+category = "communication"
+theme_color = "#3a76f0"
+icon = "icon.png"
+homepage = "https://signal.org"
+license = "AGPL-3.0-only"
+keywords = ["chat", "messenger", "encryption", "privacy"]
+
+[[sources]]
+kind = "pacman"
+package = "signal-desktop"
+
+[[sources]]
+kind = "flatpak"
+package = "org.signal.Signal"
+
+[[sources]]
+kind = "snap"
+package = "signal-desktop"

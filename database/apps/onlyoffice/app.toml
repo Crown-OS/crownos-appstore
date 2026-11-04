@@ -1,0 +1,22 @@
+id = "onlyoffice"
+name = "ONLYOFFICE"
+summary = "Office suite for documents, sheets and slides"
+description = "ONLYOFFICE Desktop Editors is an office suite with high compatibility with Microsoft Office formats."
+category = "office"
+theme_color = "#ff6f3d"
+icon = "icon.png"
+homepage = "https://www.onlyoffice.com"
+license = "AGPL-3.0-only"
+keywords = ["office", "document", "spreadsheet", "word"]
+
+[[sources]]
+kind = "aur"
+package = "onlyoffice-bin"
+
+[[sources]]
+kind = "flatpak"
+package = "org.onlyoffice.desktopeditors"
+
+[[sources]]
+kind = "snap"
+package = "onlyoffice-desktopeditors"

@@ -1,0 +1,22 @@
+id = "localsend"
+name = "LocalSend"
+summary = "Share files to nearby devices"
+description = "LocalSend shares files and messages securely with nearby devices over your local network, without the internet."
+category = "utilities"
+theme_color = "#1e88e5"
+icon = "icon.png"
+homepage = "https://localsend.org"
+license = "Apache-2.0"
+keywords = ["share", "transfer", "airdrop", "network"]
+
+[[sources]]
+kind = "aur"
+package = "localsend-bin"
+
+[[sources]]
+kind = "flatpak"
+package = "org.localsend.localsend_app"
+
+[[sources]]
+kind = "snap"
+package = "localsend"

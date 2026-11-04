@@ -1,0 +1,22 @@
+id = "spotify"
+name = "Spotify"
+summary = "Music and podcasts for everyone"
+description = "Spotify gives you instant access to millions of songs and podcasts, playlists and recommendations."
+category = "multimedia"
+theme_color = "#1db954"
+icon = "icon.png"
+homepage = "https://www.spotify.com"
+license = "LicenseRef-proprietary"
+keywords = ["music", "audio", "podcast", "stream"]
+
+[[sources]]
+kind = "aur"
+package = "spotify"
+
+[[sources]]
+kind = "flatpak"
+package = "com.spotify.Client"
+
+[[sources]]
+kind = "snap"
+package = "spotify"

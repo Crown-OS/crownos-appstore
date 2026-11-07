@@ -72,7 +72,7 @@ fn check_arity(verb: HelperVerb, got: usize) -> Result<(), HelperError> {
 
 fn command(verb: HelperVerb, packages: &[PackageName]) -> Command {
     let (program, flags): (&str, &[&str]) = match verb {
-        HelperVerb::Install => (PACMAN, &["-S", "--needed", "--noconfirm", "--"]),
+        HelperVerb::Install => (PACMAN, &["-Syu", "--needed", "--noconfirm", "--"]),
         HelperVerb::Remove => (PACMAN, &["-Rns", "--noconfirm", "--"]),
         HelperVerb::Upgrade => (PACMAN, &["-Syu", "--noconfirm"]),
         HelperVerb::SnapInstall => (SNAP, &["install"]),
@@ -114,7 +114,7 @@ mod tests {
         assert_eq!(install.get_program(), PACMAN);
         assert_eq!(
             arguments(&install),
-            ["-S", "--needed", "--noconfirm", "--", "firefox"]
+            ["-Syu", "--needed", "--noconfirm", "--", "firefox"]
         );
         let classic = command(HelperVerb::SnapInstallClassic, &packages);
         assert_eq!(arguments(&classic), ["install", "--classic", "firefox"]);

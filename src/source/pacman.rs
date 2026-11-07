@@ -22,6 +22,9 @@ impl Source for Pacman {
         Vec::new()
     }
 
+    /// Syncs first, so a repository never synced on this system (`multilib`
+    /// on a fresh install) is found, and upgrades with it: Arch supports no
+    /// partial upgrades.
     fn install(&self, source: &CatalogSource) -> Invocation {
         Invocation::privileged(HelperVerb::Install).arg(source.package.to_string())
     }

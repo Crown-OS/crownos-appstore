@@ -1,6 +1,8 @@
-# Builds the Arch packages on a v* tag and publishes them on the release, where
-# Crown-OS/crownos-iso picks them up: crownos-appstore through the shared
-# workflow in Crown-OS/.github, and snapd (only in the AUR) from packaging/snapd.
+# Builds the Arch packages on a v* tag and publishes them on the release:
+# crownos-appstore through the shared workflow in Crown-OS/.github, and snapd
+# (only in the AUR) from packaging/snapd. Each publish dispatches
+# component-updated to Crown-OS/crownos-iso, whose bump.yml pins the release in
+# components.toml; the later dispatch re-pins both packages at this tag.
 name: Package
 
 on:
@@ -38,6 +40,35 @@ jobs:
           chown -R builder packaging/snapd
           cd packaging/snapd && runuser -u builder -- env GOFLAGS=-buildvcs=false makepkg --nodeps --noconfirm
       - name: Publish
+        id: publish
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release upload "$GITHUB_REF_NAME" packaging/snapd/*.pkg.tar.zst --repo "$GITHUB_REPOSITORY" --clobber
+        run: |
+          shopt -s nullglob
+          packages=(packaging/snapd/*.pkg.tar.zst)
+          [ ${#packages[@]} -eq 1 ] || { echo "::error::expected exactly one snapd package, found ${#packages[@]}"; exit 1; }
+          gh release view "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1 ||
+            gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --verify-tag --generate-notes
+          gh release upload "$GITHUB_REF_NAME" "${packages[0]}" --repo "$GITHUB_REPOSITORY" --clobber
+          read -r sha256 _ < <(sha256sum "${packages[0]}")
+          { echo "asset=${packages[0]##*/}"; echo "sha256=$sha256"; } >> "$GITHUB_OUTPUT"
+      # The shared workflow told crownos-iso about crownos-appstore before snapd
+      # existed, so its bump pinned snapd at the previous tag. This second
+      # dispatch makes bump.yml pin snapd and then re-pin everything the manifest
+      # takes from this repository at this tag.
+      - name: Tell crownos-iso
+        env:
+          GH_TOKEN: ${{ secrets.CROWNOS_ISO_DISPATCH_TOKEN }}
+          ASSET: ${{ steps.publish.outputs.asset }}
+          SHA256: ${{ steps.publish.outputs.sha256 }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice::CROWNOS_ISO_DISPATCH_TOKEN is not set; pin $GITHUB_REF_NAME / $ASSET / $SHA256 in crownos-iso's components.toml by hand."
+            exit 0
+          fi
+          gh api repos/Crown-OS/crownos-iso/dispatches \
+            -f event_type=component-updated \
+            -f "client_payload[repo]=$GITHUB_REPOSITORY" \
+            -f "client_payload[tag]=$GITHUB_REF_NAME" \
+            -f "client_payload[asset]=$ASSET" \
+            -f "client_payload[sha256]=$SHA256"

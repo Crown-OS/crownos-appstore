@@ -7,7 +7,7 @@ theme_color = "#1e88e5"
 icon = "icon.png"
 homepage = "https://localsend.org"
 license = "Apache-2.0"
-keywords = ["share", "transfer", "airdrop", "network"]
+keywords = ["share", "transfer", "network"]
 
 [[sources]]
 kind = "aur"

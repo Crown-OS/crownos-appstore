@@ -60,6 +60,7 @@ tokio = { version = "1", default-features = false, features = [
 ureq = "3"
 
 [dev-dependencies]
+capture = { path = "../crownui/capture" }
 crowntest = { path = "../crownui/crowntest" }
 insta = "1"
 

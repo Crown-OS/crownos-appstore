@@ -15,8 +15,7 @@ use crate::{
     util::{derived::derived, theme::tint},
 };
 
-const PACMAN_NOTE: &str =
-    "Arch updates the whole system at once, so this installs every pending repository update.";
+const PACMAN_NOTE: &str = "Installs every pending repository update. CrownOS releases are installed from Settings > System Updates.";
 
 pub fn updates_page(cx: &mut Cx, store: Store) -> impl View + use<> {
     let total = derived(cx, move |runtime| {

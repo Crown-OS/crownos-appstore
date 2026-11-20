@@ -30,6 +30,7 @@ Adding a source means a file in `src/source/`, a `SourceKind` variant in
 cargo build-index                                            # database/ → database/dist/v1
 CROWNOS_APPSTORE_CATALOG=file://$PWD/database/dist cargo run # browse the local build
 CROWNOS_APPSTORE_HELPER=$PWD/target/debug/crownos-appstore-helper cargo run
+cargo run -- --page updates                                  # open the store on its Updates page
 
 cargo fmt --all -- --check && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace
 cargo test -- --ignored probes_this_machine --nocapture      # probe the real package managers

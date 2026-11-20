@@ -1,0 +1,14 @@
+id = "cursor"
+name = "Cursor"
+summary = "Code editor with built-in AI tools"
+description = "Cursor is a code editor based on Visual Studio Code. It adds AI chat, code completion and an agent that can edit files and run commands in your project. Most Visual Studio Code extensions and settings work in it."
+category = "development"
+theme_color = "#000000"
+icon = "icon.png"
+homepage = "https://cursor.com"
+license = "LicenseRef-proprietary"
+keywords = ["editor", "ide", "ai", "agent"]
+
+[[sources]]
+kind = "aur"
+package = "cursor-bin"

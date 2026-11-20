@@ -1,0 +1,13 @@
+id = "claude-code"
+name = "Claude Code"
+summary = "Coding agent from Anthropic that runs in your terminal"
+description = "Claude Code is a command-line tool from Anthropic. It reads your code, edits files and runs commands when you ask it to in plain language."
+category = "development"
+theme_color = "#d97757"
+homepage = "https://claude.com/product/claude-code"
+license = "LicenseRef-proprietary"
+keywords = ["cli", "agent", "ai", "anthropic", "terminal"]
+
+[[sources]]
+kind = "aur"
+package = "claude-code"

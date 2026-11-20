@@ -1,0 +1,18 @@
+id = "google-chrome"
+name = "Google Chrome"
+summary = "Web browser from Google"
+description = "Google Chrome is a web browser made by Google and built on Chromium. It can sync bookmarks, passwords and history with your Google account and runs extensions from the Chrome Web Store."
+category = "internet"
+theme_color = "#4285f4"
+icon = "icon.png"
+homepage = "https://www.google.com/chrome/"
+license = "LicenseRef-proprietary"
+keywords = ["browser", "web", "google"]
+
+[[sources]]
+kind = "aur"
+package = "google-chrome"
+
+[[sources]]
+kind = "flatpak"
+package = "com.google.Chrome"

@@ -1,0 +1,13 @@
+id = "codex"
+name = "Codex"
+summary = "Coding agent from OpenAI that runs in your terminal"
+description = "Codex is an open-source command-line tool from OpenAI. You describe a task in plain language, and it changes the code in your project and runs commands to check the result."
+category = "development"
+theme_color = "#000000"
+homepage = "https://github.com/openai/codex"
+license = "Apache-2.0"
+keywords = ["cli", "agent", "ai", "openai", "terminal"]
+
+[[sources]]
+kind = "pacman"
+package = "openai-codex"

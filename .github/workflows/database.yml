@@ -29,7 +29,6 @@ jobs:
       - uses: Crown-OS/.github/.github/actions/prepare-workspace@main
         with:
           packages: oxipng
-          toolchain: 1.97.1
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: ${{ github.event.repository.name }}
